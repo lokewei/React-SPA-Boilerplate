@@ -1,0 +1,50 @@
+.proj-title{
+	padding-left: 20px;
+	padding-top: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.proj-btn-save{
+	margin-left: 60px;
+}
+.proj-btn-close{
+	margin-left: 15px;
+}
+
+.dataHeader{
+	height: 38px;
+	border-bottom: 2px solid #4b87c6;
+	vertical-align: bottom;
+	label {
+		display: inline-block;
+		margin-top: 12px;
+		color: #4b87c6;
+		font-weight: bold;
+	}
+}
+.mt10{
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.searchPanel{
+	background-color: #f6f6f6;
+	padding: 15px;
+	margin-bottom: 20px;
+	&-header {
+		min-height: 14px;
+	}
+	:global(.ant-form-item){
+		margin-bottom: 0px;
+	}
+}
+//SearchInput 输入框不可编辑，按钮可用样式
+:global(.ant-input-group-wrap){
+	:global(.ant-search-btn-iDisabled){
+		background-color: #7aa8e0 !important;
+		:global(.anticon-search:before){
+			content: "\E670";
+			color: #fff !important;
+		}
+	}
+}
