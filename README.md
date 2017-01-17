@@ -1,5 +1,5 @@
 #### nodejs环境需求
-nodejs >= v4.5.0版本
+nodejs v4.5.0版本
 设置国内镜像
 `npm config set registry https://registry.npm.taobao.org `
 npm3(安装完毕nodejs后升级npm3: `npm -g install npm@3`)
@@ -14,6 +14,10 @@ npm3(安装完毕nodejs后升级npm3: `npm -g install npm@3`)
 
 #### 开发执行(常驻后台即可)
 `npm start`
+
+#### 开发+说明文档
+`npm run dev`
+
 #### 访问地址
 http://localhost:8989
 
@@ -29,40 +33,52 @@ http://lodashjs.com/docs (建议最小导入使用 eg: `import _isEmpty from 'lo
 #### alias注册
 ./alias.js 文件里注册
 
+#### 附加的图标和按钮库
+```
+import SysIcon from 'SysIcon'
+import Buttons from 'Buttons'
+```
+
 #### 目录说明
 ```
-├─apps                        #各个功能模块放在这里
-│  ├─aftersale                #售后模块
-│  │  └─contractmanage        #合同管理
-│  │      └─component
-│  ├─login
-│  ├─sales
-│  |   ├─housequery
-│  |   └─reservation
-|  ├─action.js                #主界面可发起动作
-|  ├─index.js                 #主界面视图，已连接redux
-|  └─reducer.js               #主界面动作处理器
-├─common                      #公共资源文件夹，包含功能样式图片等
-│  └─img
-│      ├─funButton
-│      └─icons
-├─components                  #可复用视图组件，与具体业务无强关联
-│  ├─Common
-│  ├─Footer
-│  ├─LeftPanel                #左侧菜单
-│  ├─Loding
-│  ├─NavPath                  #面包屑
-│  ├─PanelBox
-│  ├─RightPanel               #右侧主视图区
-│  └─TabPanel
-├─constants                   #公用静态数据
-|  └─LeftMenu                 #主菜单结构定义(新增模块时在这里增加菜单)
-├─entries                     #系统主入口文件
-├─reducers                    #系统动作处理器注册模块(增加新模块需配合在这里增加动作处理器)
-├─routes                      #系统路由动态生成模块(根据apps下的模块结构)
-├─store                       #系统全局状态存储器(一般不会修改)
-│  └─middlewares
-└─util                        #工具类包(xFetch后台请求工具等)
+├─dlls                          #dlls编译后的问题
+├─doc                           #帮助文件入口
+│
+├─src
+│ ├─apps                        #各个功能模块放在这里
+│ │  ├─aftersale                #售后模块
+│ │  │  └─contractmanage        #合同管理
+│ │  │      └─component
+│ │  ├─login
+│ │  ├─sales
+│ │  |   ├─housequery
+│ │  |   └─reservation
+│ |  ├─action.js                #主界面可发起动作
+│ |  ├─index.js                 #主界面视图，已连接redux
+│ |  └─reducer.js               #主界面动作处理器
+│ ├─common                      #公共资源文件夹，包含功能样式图片等
+│ │  └─img
+│ │      ├─funButton
+│ │      └─icons
+│ ├─components                  #可复用视图组件，与具体业务无强关联
+│ │  ├─Common
+│ │  ├─Footer
+│ │  ├─LeftPanel                #左侧菜单
+│ │  ├─Loding
+│ │  ├─NavPath                  #面包屑
+│ │  ├─PanelBox
+│ │  ├─RightPanel               #右侧主视图区
+│ │  └─TabPanel
+│ ├─constants                   #公用静态数据
+│ |  └─LeftMenu                 #主菜单结构定义(新增模块时在这里增加菜单)
+│ ├─entries                     #系统主入口文件
+│ ├─reducers                    #系统动作处理器注册模块(自动扫描apps下的reducer.js文件)
+│ ├─routes                      #系统路由动态生成模块(根据apps下的模块结构)
+│ ├─store                       #系统全局状态存储器(一般不会修改)
+│ │  └─middlewares
+│ └─util                        #工具类包(xFetch后台请求工具等)
+│
+├─static                        #静态资源存放路径                      
 ```
 
 #### 开发注意要点
